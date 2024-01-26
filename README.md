@@ -1,8 +1,7 @@
 # lat_hdr_transcoder_v2
 
 
-[![pub package](https://img.shields.io/pub/v/lat_hdr_transcoder_v2.svg)]
-(https://pub.dartlang.org/packages/lat_hdr_transcoder_v2)
+[![pub package](https://img.shields.io/pub/v/lat_hdr_transcoder_v2.svg)](https://pub.dartlang.org/packages/lat_hdr_transcoder_v2)
 
 
 The purpose of this plugin is clear and simple
