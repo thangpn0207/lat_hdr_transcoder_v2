@@ -10,6 +10,7 @@ import androidx.annotation.NonNull
 import androidx.annotation.OptIn
 import androidx.core.content.FileProvider
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.transformer.*
 import androidx.media3.transformer.Transformer.PROGRESS_STATE_NOT_STARTED
@@ -146,7 +147,8 @@ class LatHdrTranscoderV2Plugin: FlutterPlugin, MethodCallHandler, EventChannel.S
       return
     }
     val editedMediaItem =
-      EditedMediaItem.Builder(MediaItem.fromUri(inputUri)).build()
+      EditedMediaItem.Builder(MediaItem.fromUri(inputUri))
+        .setFlattenForSlowMotion(true).build()
     val composition = Composition.Builder(EditedMediaItemSequence(editedMediaItem))
       .setHdrMode(toneMap)
       .build()
@@ -207,7 +209,7 @@ class LatHdrTranscoderV2Plugin: FlutterPlugin, MethodCallHandler, EventChannel.S
   }
 
   private fun sdrDirectory(): File {
-    return File(context.cacheDir, sdrDirName)
+    return File(context.getExternalFilesDir("lat_hdr"), sdrDirName)
   }
 
   private fun clearCache(): Boolean {
@@ -242,6 +244,10 @@ class LatHdrTranscoderV2Plugin: FlutterPlugin, MethodCallHandler, EventChannel.S
   }
 
   private fun uriFromFilePath(path: String): Uri {
-    return FileProvider.getUriForFile(context, context.packageName + ".provider", File(path))
+    return FileProvider.getUriForFile(
+      context,
+      context.packageName + ".provider",
+      File(path)
+    )
   }
 }
