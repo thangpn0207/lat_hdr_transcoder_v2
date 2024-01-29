@@ -2,7 +2,7 @@ group 'com.transcoder.lat_hdr_transcoder_v2.lat_hdr_transcoder_v2'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.21'
+    ext.kotlin_version = '1.8.22'
     repositories {
         google()
         mavenCentral()
@@ -29,7 +29,7 @@ android {
         namespace 'com.transcoder.lat_hdr_transcoder_v2.lat_hdr_transcoder_v2'
     }
 
-    compileSdkVersion 33
+    compileSdk 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -46,12 +46,12 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 24
     }
 
     dependencies {
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
-        testImplementation 'org.mockito:mockito-core:5.0.0'
+        testImplementation 'org.mockito:mockito-core:5.1.1'
     }
 
     testOptions {
@@ -67,8 +67,8 @@ android {
     }
 }
 dependencies {
-    implementation 'androidx.media3:media3-transformer:1.2.0'
-    implementation 'androidx.media3:media3-common:1.2.0'
-    implementation 'androidx.annotation:annotation-jvm:1.7.0'
+    implementation 'androidx.media3:media3-transformer:1.2.1'
+    implementation 'androidx.media3:media3-common:1.2.1'
+    implementation 'androidx.annotation:annotation-jvm:1.7.1'
     implementation 'androidx.core:core-ktx:1.12.0'
 }
