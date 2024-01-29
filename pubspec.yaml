@@ -1,6 +1,6 @@
 name: lat_hdr_transcoder_v2
 description: "It checks if the video file is in HDR format and converts HDR video to SDR video"
-version: 1.0.0+1
+version: 1.0.0+2
 homepage: https://github.com/thangpn0207/lat_hdr_transcoder_v2
 repository: https://github.com/thangpn0207/lat_hdr_transcoder_v2
 

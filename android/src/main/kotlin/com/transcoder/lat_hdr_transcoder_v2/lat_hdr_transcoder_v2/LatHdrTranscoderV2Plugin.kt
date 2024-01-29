@@ -173,7 +173,7 @@ class LatHdrTranscoderV2Plugin: FlutterPlugin, MethodCallHandler, EventChannel.S
     }
 
     val transformer = Transformer.Builder(context)
-      .addListener(transformerOnListener)
+      .addListener(transformerOnListener).
       .build()
     transformer.start(composition, outputPath)
 

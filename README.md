@@ -18,12 +18,46 @@ Be sure to check the minimum supported version
 
 ```yaml
 dependencies:
-  lat_hdr_transcoder_v2: ^1.0.0+1
+  lat_hdr_transcoder_v2: ^1.0.0+2
 ```
 
 # Android
 
 ```transcoding``` supported 29+
+<br/>
+Add provider under <application> in AndroidManifest.xml
+```
+<provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+</provider>
+```
+create res/xml/file_paths.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path
+        name="external"
+        path="." />
+    <external-files-path
+        name="external_files"
+        path="." />
+    <cache-path
+        name="cache"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+    <files-path
+        name="files"
+        path="." />
+</paths>
+```
 
 
 # iOS
