@@ -13,7 +13,7 @@ public class LatHdrTranscoderV2Plugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
      let channel = FlutterMethodChannel(name: "lat_hdr_transcoder_v2", binaryMessenger: registrar.messenger())
-            let instance = LatHdrTranscoderPlugin()
+            let instance = LatHdrTranscoderV2Plugin()
             registrar.addMethodCallDelegate(instance, channel: channel)
 
             let eventChannel = FlutterEventChannel(name: "lat_hdr_transcoder_v2_event", binaryMessenger: registrar.messenger())

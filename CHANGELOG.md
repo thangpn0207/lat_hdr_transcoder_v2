@@ -1,3 +1,6 @@
+## 1.0.0+4
+
+* fix plugin name  IOS.
 ## 1.0.0+3
 
 * fix err android.
