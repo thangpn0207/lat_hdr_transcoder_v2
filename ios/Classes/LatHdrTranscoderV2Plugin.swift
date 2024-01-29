@@ -1,7 +1,7 @@
 import Flutter
 import UIKit
 
-public class LatHdrTranscoderV2Plugin: NSObject, FlutterPlugin {
+public class LatHdrTranscoderV2Plugin: NSObject, FlutterPlugin , FlutterStreamHandler{
     private let cacheDirName = "_sdr_"
 
       private var eventSink: FlutterEventSink?
@@ -13,11 +13,11 @@ public class LatHdrTranscoderV2Plugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
      let channel = FlutterMethodChannel(name: "lat_hdr_transcoder_v2", binaryMessenger: registrar.messenger())
+      let eventChannel = FlutterEventChannel(name: "lat_hdr_transcoder_v2_event", binaryMessenger: registrar.messenger())
+      
             let instance = LatHdrTranscoderV2Plugin()
             registrar.addMethodCallDelegate(instance, channel: channel)
-
-            let eventChannel = FlutterEventChannel(name: "lat_hdr_transcoder_v2_event", binaryMessenger: registrar.messenger())
-            eventChannel.setStreamHandler(instance.self)
+      eventChannel.setStreamHandler(instance)
   }
  public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         eventSink = events
