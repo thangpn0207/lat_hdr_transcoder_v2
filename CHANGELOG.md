@@ -1,3 +1,6 @@
+## 1.0.0+5
+
+* fix event sink IOS.
 ## 1.0.0+4
 
 * fix plugin name  IOS.
