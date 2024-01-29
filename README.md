@@ -18,7 +18,7 @@ Be sure to check the minimum supported version
 
 ```yaml
 dependencies:
-  lat_hdr_transcoder_v2: ^1.0.0+2
+  lat_hdr_transcoder_v2: ^1.0.0+3
 ```
 
 # Android
